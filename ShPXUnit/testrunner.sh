@@ -109,16 +109,16 @@ testrunner() {
             total_tests=$((total_tests + 1))
 
             printf "\n––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n"
-            printf "[RUN] Executing %s...\n" "$(basename "$test_script")"
+            printf "[EXEC] [FILE] Executing %s...\n" "$(basename "$test_script")"
             printf "––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n"
 
             sh "$test_script"
             exit_code=$?
 
             if [ "$exit_code" -eq 0 ]; then
-                printf "[PASS] %s\n" "$(basename "$test_script")"
+                printf "[PASS] [FILE] %s\n" "$(basename "$test_script")"
             else
-                printf "[FAIL] %s (Exit Code: %d)\n" "$(basename "$test_script")" "$exit_code"
+                printf "[FAIL] [FILE] %s (Exit Code: %d)\n" "$(basename "$test_script")" "$exit_code"
                 failed_tests=$((failed_tests + 1))
             fi
         done

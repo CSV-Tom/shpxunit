@@ -23,9 +23,9 @@ assert_contains() {
     test_description="$3"
 
     if echo "$haystack" | grep -qF "$needle"; then
-        printf "[PASS] %s\n" "$test_description"
+        printf "[PASS] [ASSERT] %s\n" "$test_description"
     else
-        printf "[FAIL] %s\n  Expected to contain: '%s'\n  Got: '%s'\n" "$test_description" "$needle" "$haystack"
+        printf "[FAIL] [ASSERT] %s\n  Expected to contain: '%s'\n  Got: '%s'\n" "$test_description" "$needle" "$haystack"
         exit 1
     fi
 

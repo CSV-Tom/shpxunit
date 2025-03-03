@@ -21,9 +21,9 @@ assert_file_not_exists() {
     test_description="$2"
 
     if [ ! -f "$file_path" ]; then
-        printf "[PASS] %s\n" "$test_description"
+        printf "[PASS] [ASSERT] %s\n" "$test_description"
     else
-        printf "[FAIL] %s\n  Unexpected file found: '%s'\n" "$test_description" "$file_path"
+        printf "[FAIL] [ASSERT] %s\n  Unexpected file found: '%s'\n" "$test_description" "$file_path"
         exit 1
     fi
 

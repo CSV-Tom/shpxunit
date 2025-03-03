@@ -23,9 +23,9 @@ assert_not_equal() {
     test_description="$3"
 
     if [ "$unexpected" != "$actual" ]; then
-        printf "[PASS] %s\n" "$test_description"
+        printf "[PASS] [ASSERT] %s\n" "$test_description"
     else
-        printf "[FAIL] %s\n  Unexpected: %s\n" "$test_description" "$actual"
+        printf "[FAIL] [ASSERT] %s\n  Unexpected: %s\n" "$test_description" "$actual"
         exit 1
     fi
 

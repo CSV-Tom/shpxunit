@@ -57,7 +57,8 @@ testcase() {
     setup_func="$4"
     teardown_func="$5"
 
-    printf "\n[TEST] %s\n" "$test_description"
+    printf "\n[EXEC] [TEST] %s\n" "$test_description"
+    printf "––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n"
 
     if [ -n "$setup_func" ]; then
         printf "[SETUP] Running %s...\n" "$setup_func"
@@ -72,10 +73,11 @@ testcase() {
         eval "$teardown_func"
     fi
 
+    printf "––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n"
     if [ "$exit_code" -eq 0 ]; then
-        printf "[PASS] %s\n" "$test_name"
+        printf "[PASS] [TEST] %s\n" "$test_name"
     else
-        printf "[FAIL] %s\n" "$test_name"
+        printf "[FAIL] [TEST] %s\n" "$test_name"
         return 1
     fi
 }

@@ -24,10 +24,10 @@ assert_not_contains() {
     test_description="$3"
 
     if echo "$haystack" | grep -qF "$needle"; then
-        printf "[FAIL] %s\n  Should not contain: '%s'\n  Got: '%s'\n" "$test_description" "$needle" "$haystack"
+        printf "[FAIL] [ASSERT] %s\n  Should not contain: '%s'\n  Got: '%s'\n" "$test_description" "$needle" "$haystack"
         exit 1
     else
-        printf "[PASS] %s\n" "$test_description"
+        printf "[PASS] [ASSERT] %s\n" "$test_description"
     fi
 
     unset haystack needle test_description

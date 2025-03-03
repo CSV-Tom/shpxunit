@@ -26,10 +26,9 @@ assert_command_stderr_contains() {
     output=$(eval "$command" 2>&1 >/dev/null)
 
     if echo "$output" | grep -qF "$expected_error"; then
-        printf "[PASS] %s\n" "$test_description"
+        printf "[PASS] [ASSERT] %s\n" "$test_description"
     else
-        printf "[FAIL] %s\n  Expected stderr: '%s'\n  Got stderr: '%s'\n" \
-            "$test_description" "$expected_error" "$output"
+        printf "[FAIL] [ASSERT] %s\n  Expected stderr: '%s'\n  Got stderr: '%s'\n" "$test_description" "$expected_error" "$output"
         exit 1
     fi
 

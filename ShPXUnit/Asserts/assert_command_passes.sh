@@ -24,9 +24,9 @@ assert_command_passes() {
     exit_code=$?
 
     if [ "$exit_code" -eq 0 ]; then
-        printf "[PASS] %s\n" "$test_description"
+        printf "[PASS] [ASSERT] %s\n" "$test_description"
     else
-        printf "[FAIL] %s\n  Expected exit code: 0\n  Got: %s\n" "$test_description" "$exit_code"
+        printf "[FAIL] [ASSERT] %s\n  Expected exit code: 0\n  Got: %s\n" "$test_description" "$exit_code"
         exit 1
     fi
 

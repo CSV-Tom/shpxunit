@@ -23,9 +23,9 @@ assert_equal() {
     test_description="$3"
 
     if [ "$expected" = "$actual" ]; then
-        printf "[PASS] %s\n" "$test_description"
+        printf "[PASS] [ASSERT] %s\n" "$test_description"
     else
-        printf "[FAIL] %s\n  Expected: %s\n  Got:      %s\n" "$test_description" "$expected" "$actual"
+        printf "[FAIL] [ASSERT] %s\n  Expected: %s\n  Got:      %s\n" "$test_description" "$expected" "$actual"
         exit 1
     fi
 

@@ -22,9 +22,9 @@ assert_pass() {
     test_description="$2"
 
     if eval "$test_command" >/dev/null 2>&1; then
-        printf "[PASS] %s\n" "$test_description"
+        printf "[PASS] [ASSERT] %s\n" "$test_description"
     else
-        printf "[FAIL] %s\n" "$test_description"
+        printf "[FAIL] [ASSERT] %s\n" "$test_description"
         exit 1
     fi
 

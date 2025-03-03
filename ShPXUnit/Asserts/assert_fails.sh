@@ -33,9 +33,9 @@ assert_fails() {
     clean_output=$(echo "$output" | sed "s/$(printf '\033')\[[0-9;]*[mK]//g")
 
     if [ "$exit_code" -eq "$expected_exit_code" ] && echo "$clean_output" | grep -qF "$expected_message"; then
-        printf "[PASS] %s\n" "$test_description"
+        printf "[PASS] [ASSERT] %s\n" "$test_description"
     else
-        printf "[FAIL] %s\n  Expected exit: %s, got: %s\n  Expected message: %s\n  Got output:\n%s\n" \
+        printf "[FAIL] [ASSERT] %s\n  Expected exit: %s, got: %s\n  Expected message: %s\n  Got output:\n%s\n" \
             "$test_description" "$expected_exit_code" "$exit_code" "$expected_message" "$clean_output"
         exit 1
     fi

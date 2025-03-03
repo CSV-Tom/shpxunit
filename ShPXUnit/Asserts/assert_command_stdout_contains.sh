@@ -26,10 +26,9 @@ assert_command_stdout_contains() {
     output=$(eval "$command" 2>&1)
 
     if echo "$output" | grep -qF "$expected_output"; then
-        printf "[PASS] %s\n" "$test_description"
+        printf "[PASS] [ASSERT] %s\n" "$test_description"
     else
-        printf "[FAIL] %s\n  Expected output: '%s'\n  Got output: '%s'\n" \
-            "$test_description" "$expected_output" "$output"
+        printf "[FAIL] [ASSERT] %s\n  Expected output: '%s'\n  Got output: '%s'\n" "$test_description" "$expected_output" "$output"
         exit 1
     fi
 

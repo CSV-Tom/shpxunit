@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.2 - Shell Execution Fix (YYYY-MM-DD)
+
+### 🐞 Bug Fixes
+
+- **Ensure test scripts execute in the correct shell**
+  - Implemented detection of the current shell using `ps -p $$ -o comm=`.
+  - All test scripts now execute under the same shell that started the test runner.
+  - Fallback to `sh` if `ps` is unavailable to maintain POSIX compatibility.
+  - Improved consistency in execution across `sh`, `dash`, `ksh`, and `bash`.
+
+  This update ensures that all test scripts are run in the expected shell environment, preventing potential inconsistencies.
+
 ## v0.0.1 - Initial Release (2025-03-03)
 
 ### 🚀 Features

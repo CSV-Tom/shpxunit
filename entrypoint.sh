@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 
+# Falls Argumente übergeben wurden, diese als Befehl ausführen
+if [ "$#" -gt 0 ]; then
+    exec "$@"
+    exit
+fi
+
 printf "Running tests for shPXUnit in multiple shells...\n"
 printf "–––––––––––––––––––––––––––––––––––––––––––––––––––––\n"
 

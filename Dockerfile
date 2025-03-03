@@ -11,4 +11,6 @@ ENV SHPXUNIT_ROOT=/shpxunit/ShPXUnit
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+RUN ln -s /shpxunit/ShPXUnit/testrunner.sh /bin/shpxunit
+
 ENTRYPOINT ["/entrypoint.sh"]

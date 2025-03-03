@@ -8,6 +8,9 @@
 # This ensures that assertions correctly detect failures, successes, and expected outputs.
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 test_assertion_functions() {
+
+    ps -p $$
+
     # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     # Command Assertions (Success & Failure)
     # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

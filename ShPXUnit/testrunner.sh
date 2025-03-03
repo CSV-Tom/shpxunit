@@ -112,7 +112,8 @@ testrunner() {
             printf "[EXEC] [FILE] Executing %s...\n" "$(basename "$test_script")"
             printf "––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n"
 
-            sh "$test_script"
+            current_shell=$(ps -p $$ -o comm= 2>/dev/null || echo "sh")
+            exec "$current_shell" "$test_script"
             exit_code=$?
 
             if [ "$exit_code" -eq 0 ]; then

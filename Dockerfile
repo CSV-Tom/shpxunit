@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 
-RUN apt-get update && apt-get install -y bash dash ksh git && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y bash dash ksh git procps && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /shpxunit
 
